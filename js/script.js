@@ -1,3 +1,9 @@
+/**
+ * Author   : Debojit Chakraborty
+ * Date     : Feb-27, 2021
+ */
+
+
 const lexiconLink = 'https://raw.githubusercontent.com/justaRandomCoder/LeXicon/master/database/E2Bdatabase.json';
 const base = 256; //for symbols in unicode
 const prime =  999999999989; //12 digit prime
@@ -73,7 +79,7 @@ class PerfectHashing{
         this.firstHashA = Math.floor(Math.random() * (prime - 1) ) + 1; // 1 to prime-1
         this.firstHashB = Math.floor(Math.random() * prime); //0 to prime-1
         
-        for(var i =0 ; i< dictionary.words.length;i++){
+        for(var i =0 ; i< dictionary.size;i++){
             var word = dictionary.words[i].en.toLowerCase();
             var key = this.stringToKeyValue(word);
             var hashval = this.getPrimaryHashValue(key);
@@ -85,17 +91,21 @@ class PerfectHashing{
     
     
     getSecondaryHashTable(wordArray, index){
+        
         var m = wordArray.length; //n*n size array
         var secondHash = new Array(m*m);
         var a;
         var b;
-
+        
+        //checking for collission in the secondary hash table
         while(true){
             
             secondHash.fill(-1)
             var check = true 
             a = Math.floor(Math.random() * (prime - 1) ) + 1 // 1 to prime-1
             b = Math.floor(Math.random() * prime) // 0 to prime-1
+            
+            
             for(var i = 0; i < wordArray.length; i++){
                 
                 var key = this.stringToKeyValue(dictionary.words[wordArray[i]].en);
@@ -116,7 +126,7 @@ class PerfectHashing{
                 }
             
             }
-
+            
             if(check == true){ 
 
                 this.hashtableKeys[index][0] = Number(a);
@@ -159,8 +169,8 @@ class PerfectHashing{
 }
 
 
-var hashx = new PerfectHashing()
-var dictionary = new Dictionary()
+var hashx = new PerfectHashing();
+var dictionary = new Dictionary();
 
 window.onload = function getDictionary(){
     console.log('dictionary recieved')
@@ -196,6 +206,7 @@ function search(){
         output.innerHTML = "";
         return ;
     }
+    //calculating primaryhash
     w = w.value.toLowerCase();
     var key = hashx.stringToKeyValue(w);
     var primaryHash = hashx.getPrimaryHashValue(key);
@@ -205,7 +216,8 @@ function search(){
             output.innerHTML = "Word does not exist in dictionary";
             return;
         }
-    
+        
+        //calculating secondaryhash
         var a = hashx.hashtableKeys[primaryHash][0];
         var b = hashx.hashtableKeys[primaryHash][1];
         var m = hashx.hashtableKeys[primaryHash][2];
