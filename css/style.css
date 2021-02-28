@@ -45,7 +45,7 @@ main{
     width: 150px;
     text-align: center;
     font-size: large;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'verdana', monospace;
     color: grey;
     
 }
@@ -69,7 +69,7 @@ main{
     font-size: 30px;
     font-family: 'verdana', monospace;
     color: grey;
-    padding: 15px;
+    padding: 25px;
 }
 .circle1,
 .circle2 {
