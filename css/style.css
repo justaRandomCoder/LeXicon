@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65dfc9,#6cdbeb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.glass{
+    background: white;
+    min-height: 80vh;
+    width: 70%;
+    border-style: solid;
+    border-color: grey;
+    background: linear-gradient(
+        to right bottom,
+     rgba(255,255,255,0.9),
+     rgba(255,255,255,0.1));
+    border-radius: 2rem;
+}
+.headingfield, .textfield, .buttoncontainer, .displayresultfield{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+.headingfield{
+    color: rgb(76, 165, 165);
+    font-size: 40px;
+    font-weight: lighter;
+    font-family: 'Inconsolata', monospace;
+    padding: 60px;
+}
+.button {
+    background: linear-gradient(to right top, #65dfc9,#6cdbeb);
+    border-style: double;
+    border-color:  rgb(76, 165, 165);
+    color: rgb(76, 165, 165);
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    font-size: large;
+    font-family: 'Inconsolata', monospace;
+    color: grey;
+    
+}
+.textfield{
+    padding: 20px;
+}
+.input{
+    background: linear-gradient(to right top, #65dfc9,#6cdbeb);
+    border-style: double;
+    border-color: rgb(0,255, 255);
+    height: 70px;
+    width: 500px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'verdana', monospace;
+    color: grey;
+    
+}
+#output {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'verdana', monospace;
+    color: grey;
+    padding: 15px;
+}
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  top: 2%;
+  right: 10%;
+}
+.circle2 {
+  bottom: 2%;
+  left: 10%;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title> English to Bangla Dictionary </title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <main>
+            <section class="glass">
+                <div class = "headingfield">
+                    <p>English to Bangla Dictionary</p>   
+                </div>
+                <div class = "textfield">
+                    <input type = "text" class = "input" id = "searchword" onkeyup = "clearTextField()" size = "50" placeholder="Type an English word"><br><br>
+                </div>
+                <div class = "buttoncontainer">
+                    <button class = "button" onclick="search()">Search</button>
+                </div>
+                <div class = "displayresultfield">
+                    <p id = "output"> </p>
+                </div>
+            </section>
+        </main>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
